@@ -96,7 +96,9 @@ def get_status():
         logger.debug(f'Failed to get the missing blocks from {urls[i]}')
         return False
 
+    LAST_UPDATE = time.time()
     BLOCKS_MISSED = missed
+
     if int(BLOCKS_MISSED) > 2000:
         logger.info(f'Sending alert: Missing blocks: {BLOCKS_MISSED}!')
         send_alert(blocks_missed=BLOCKS_MISSED)
