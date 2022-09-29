@@ -1,4 +1,4 @@
-# Pager-duty event emiter
+# Pagerduty for validators
 
 Simple API to send notifications to your pager duty api if you are missing blocks
 
