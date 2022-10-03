@@ -68,6 +68,7 @@ def get_status():
         height = get_height(urls[i])
         i = i + 1
 
+
     if i == len(urls):
         if LAST_UPDATE is None:
             # All endpoints are invalid
@@ -80,6 +81,8 @@ def get_status():
             logger.info('Sending alert: No valid response')
             send_alert(text=f'No valid response after {MAX_TIMEOUT} seconds')
             return False
+
+        return False
 
     if CURRENT_BLOCK is None:
         CURRENT_BLOCK = height
