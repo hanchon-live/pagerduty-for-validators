@@ -84,6 +84,8 @@ def get_status():
 
         return False
 
+    i = i - 1
+
     if CURRENT_BLOCK is None:
         CURRENT_BLOCK = height
     else:
@@ -102,7 +104,7 @@ def get_status():
     LAST_UPDATE = time.time()
     BLOCKS_MISSED = missed
 
-    if int(BLOCKS_MISSED) > 2000:
+    if int(BLOCKS_MISSED) > 3500:
         logger.info(f'Sending alert: Missing blocks: {BLOCKS_MISSED}!')
         send_alert(blocks_missed=BLOCKS_MISSED)
         return False
