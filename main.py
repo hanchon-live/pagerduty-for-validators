@@ -148,7 +148,7 @@ def send_alert(blocks_missed='?', text='Missing blocks!'):
     global LAST_ALERT
 
     if LAST_ALERT is not None:
-        if time.time() - LAST_ALERT > 5 * 60:
+        if time.time() - LAST_ALERT < 5 * 60:
             # Only send 1 alert every 5min
             return False
 
